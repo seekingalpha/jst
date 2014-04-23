@@ -6,7 +6,7 @@ JST is a simple javascript templating system inspired by Sprockets' homonimous t
 
 Add this line to your application's Gemfile:
 
-    gem 'jst', github: "seekingalpha/jst"
+    gem 'jst', github: 'seekingalpha/jst'
 
 And then execute:
 
@@ -26,7 +26,7 @@ In order to compile your templates, run:
   JST::Aggregator.new("app/assets/javascripts/templates").save("public/javascripts/templates.js")
 ```
 
-Now you can use the templates like this in your JS files:
+Now, load templates.js in your view and then you can use the templates like this in your JS files:
 
 ```js
   Templates.hi({name: "Emmanuel"})
