@@ -1,3 +1,8 @@
+[![Code Climate](https://codeclimate.com/repos/5358f2f0e30ba06766001f0b/badges/4b55d6afc21edbf37bc0/gpa.png)](https://codeclimate.com/repos/5358f2f0e30ba06766001f0b/feed)
+
+[![Build Status](https://travis-ci.org/seekingalpha/jst.svg?branch=master)](https://travis-ci.org/seekingalpha/jst)
+
+
 # JST
 
 JST is a simple javascript templating system inspired by Sprockets' homonimous templating system, but built on top of PrototypeJS's template system and for rails projects without Sprockets.
