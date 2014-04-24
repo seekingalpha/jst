@@ -40,8 +40,6 @@ Then you can just run:
   JST.process!
 ```
 
-Now you can use the templates like this in your JS files:
-=======
 Now, load templates.js in your view and then you can use the templates like this in your JS files:
 
 ```js
