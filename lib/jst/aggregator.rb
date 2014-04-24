@@ -1,10 +1,10 @@
 class JST::Aggregator
-  def initialize(path)
-    @path = path
+  def initialize(templates_path=JST.config.templates_path)
+    @templates_path = templates_path
   end
 
-  def save(path)
-    File.write(path, aggregate)
+  def save(output=JST.config.output)
+    File.write(output, aggregate)
   end
 
   def aggregate
@@ -27,6 +27,6 @@ class JST::Aggregator
   end
 
   def jst_files
-    Dir.glob(@path + "/*.jst")
+    Dir.glob(@templates_path + "/*.jst")
   end
 end
