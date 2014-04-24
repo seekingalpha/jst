@@ -28,7 +28,7 @@ describe JST do
   describe '.process!' do
 
     it 'should delegate to aggregator' do
-      allow_any_instance_of(JST::Aggregator).to receive(:save)
+      expect_any_instance_of(JST::Aggregator).to receive(:save)
 
       JST.process!
     end
