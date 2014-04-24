@@ -19,11 +19,25 @@ Create a folder in your project and add PrototypeJS templates with the ".jst" ex
 ```html
   <h1>Hi, #{name}</h1>
 ```
-
 In order to compile your templates, run:
 
 ```ruby
   JST::Aggregator.new("app/assets/javascripts/templates").save("public/javascripts/templates.js")
+```
+
+If you don't wanna pass the paths everytime, you can configure it first:
+
+```ruby
+  JST.configure do |config|
+    config.templates_path = "app/assets/javascripts/templates"
+    config.output         = "public/javascripts/templates.js"
+  end
+```
+
+Then you can just run:
+
+```ruby
+  JST.process!
 ```
 
 Now you can use the templates like this in your JS files:
