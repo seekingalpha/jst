@@ -6,9 +6,14 @@ describe JST::Aggregator do
   subject(:js){ V8::Context.new }
 
   let(:prototype){ File.read("spec/fixtures/mock_prototype.js") }
-  let(:code){ JST::Aggregator.new("spec/fixtures") }
+  let(:code){ JST::Aggregator.new }
 
   before do
+    JST.configure do |config|
+      config.templates_path = "spec/fixtures"
+      config.output = "/tmp/#{Time.now}.js"
+    end
+
     js.eval(prototype)
     js.eval(code)
   end
