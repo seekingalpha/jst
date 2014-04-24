@@ -6,7 +6,7 @@ JST is a simple javascript templating system inspired by Sprockets' homonimous t
 
 Add this line to your application's Gemfile:
 
-    gem 'jst', github: "seekingalpha/jst"
+    gem 'jst', github: 'seekingalpha/jst'
 
 And then execute:
 
@@ -22,15 +22,15 @@ Create a folder in your project and add PrototypeJS templates with the ".jst" ex
 In order to compile your templates, run:
 
 ```ruby
-  JST::Aggregator.new("app/assets/javascripts/templates").save("public/javascripts/templates.js")
+  JST::Aggregator.new('app/assets/javascripts/templates').save('public/javascripts/templates.js')
 ```
 
-If you don't wanna pass the paths everytime, you can configure it first:
+If you don't wanna pass the paths every time, you can configure it first:
 
 ```ruby
   JST.configure do |config|
-    config.templates_path = "app/assets/javascripts/templates"
-    config.output         = "public/javascripts/templates.js"
+    config.templates_path = 'app/assets/javascripts/templates'
+    config.output         = 'public/javascripts/templates.js'
   end
 ```
 
@@ -41,9 +41,11 @@ Then you can just run:
 ```
 
 Now you can use the templates like this in your JS files:
+=======
+Now, load templates.js in your view and then you can use the templates like this in your JS files:
 
 ```js
-  Templates.hi({name: "Emmanuel"})
+  Templates.hi({name: 'Emmanuel'})
 ```
 
 This will output ```<h1>Hi, Emmanuel</h1>```, as expected. Notice the method "hi" is created automatically based on the name of the template file.
