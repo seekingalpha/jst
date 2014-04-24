@@ -5,7 +5,14 @@ module JST
   autoload :Version,       'jst/version'
 
   def self.configure
-    @@config = Configuration.new
-    yield @@config
+    yield @@config ||= Configuration.new
+  end
+
+  def self.config
+    @@config
+  end
+
+  def self.process!
+    Aggregator.new.save
   end
 end
