@@ -1,19 +1,32 @@
 require 'spec_helper'
 
 describe JST::Template do
-  subject do
-    JST::Template.new("spec/fixtures/hello.jst")
-  end
+  describe '.parse' do
+    context 'prototypejs extension' do
+      it 'should instanciate PrototypeJS' do
+        allow_any_instance_of(JST::Template::PrototypeJS).to receive(:to_jst).and_return("OK")
+        result = JST::Template.parse('/test.jst.pt')
 
-  let(:template_content){ %(<h1>Hello, <a href="#foo">\#{name}</a></h1>\n) }
-  
-  let(:expected_result) do
-    <<-RESULT
-this.Templates["hello"] = function(context){
-  return new Template(#{template_content.inspect}).evaluate(context);
-}
-    RESULT
-  end
+        expect(result).to eq('OK')
+      end
+    end
 
-  its(:to_jst){ should eq expected_result }
+    context 'no extension' do
+      it 'should instanciate PrototypeJS' do
+        allow_any_instance_of(JST::Template::PrototypeJS).to receive(:to_jst).and_return("OK")
+        result = JST::Template.parse('/test.jst')
+
+        expect(result).to eq('OK')
+      end
+    end
+
+    context 'handle bars extension' do
+      it 'should instanciate HandleBars' do
+        allow_any_instance_of(JST::Template::Handlebars).to receive(:to_jst).and_return("OK")
+        result = JST::Template.parse('/test.jst.hb')
+
+        expect(result).to eq('OK')
+      end
+    end
+  end
 end

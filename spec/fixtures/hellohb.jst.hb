@@ -1,0 +1,1 @@
+<h1>Hello, <a href="#foo">{{name}}</a></h1>

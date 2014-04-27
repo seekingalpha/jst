@@ -21,12 +21,10 @@ class JST::Aggregator
   private
 
   def process_all
-    jst_files.map do |file|
-      JST::Template.new(file).to_jst
-    end.join("\n")
+    jst_files.map{ |file| JST::Template.parse(file) }.join("\n")
   end
 
   def jst_files
-    Dir.glob(@templates_path + "/*.jst")
+    Dir.glob(@templates_path + "/*.jst*")
   end
 end

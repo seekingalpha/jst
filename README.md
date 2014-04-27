@@ -5,7 +5,9 @@
 
 # JST
 
-JST is a simple javascript templating system inspired by Sprockets' homonimous templating system, but built on top of PrototypeJS's template system and for rails projects without Sprockets.
+JST is a simple javascript templating system inspired by Sprockets' homonimous templating system, but built for rails projects without Sprockets.
+
+JST works on top of [PrototypeJS's template system](prototypejs.org/doc/latest/language/Template/) and [HandleBars](http://handlebarsjs.com/).
 
 ## Install
 
@@ -19,7 +21,7 @@ And then execute:
 
 ## Usage
 
-Create a folder in your project and add PrototypeJS templates with the ".jst" extension. Let's suppose you have a "hi.jst" file in "app/assets/javascripts/templates":
+Create a folder in your project and add PrototypeJS templates with the ".jst.pt" extension or Handlebars with the ".jst.hb". Let's suppose you have a "hi.jst.pt" file in "app/assets/javascripts/templates":
 
 ```html
   <h1>Hi, #{name}</h1>
@@ -67,3 +69,4 @@ Enjoy!
 ## Roadmap
 
 - Use guard to watch template folder and compile automatically when changed.
+- Allow handlebars templates. 
