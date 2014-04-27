@@ -7,7 +7,7 @@
 
 JST is a simple javascript templating system inspired by Sprockets' homonimous templating system, but built for rails projects without Sprockets.
 
-JST works on top of [PrototypeJS's template system](prototypejs.org/doc/latest/language/Template/) and [HandleBars](http://handlebarsjs.com/).
+JST works on top of [PrototypeJS's template system](http://prototypejs.org/doc/latest/language/Template/) and [HandleBars](http://handlebarsjs.com/).
 
 ## Install
 
@@ -69,4 +69,4 @@ Enjoy!
 ## Roadmap
 
 - Use guard to watch template folder and compile automatically when changed.
-- Allow handlebars templates. 
+- Allow handlebars templates.
