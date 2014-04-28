@@ -32,7 +32,7 @@ In order to compile your templates, run:
   JST::Aggregator.new('app/assets/javascripts/templates').save('public/javascripts/templates.js')
 ```
 
-If you don't wanna pass the paths every time, you can configure it first:
+If you don't wanna pass the paths every time, you can configure it first (rule of thumb: add it to config/initializers/jst.rb):
 
 ```ruby
   JST.configure do |config|
