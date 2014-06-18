@@ -69,4 +69,4 @@ Enjoy!
 ## Roadmap
 
 - Use guard to watch template folder and compile automatically when changed.
-- Allow handlebars templates.
+- ~~Allow handlebars templates.~~
